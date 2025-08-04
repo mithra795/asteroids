@@ -13,21 +13,23 @@ def main():
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
-    number = 1
+ 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
     ship = Player(x, y)
-    while number > 0:
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        number += 1
+            
+            
+        ship.update(dt)
         screen.fill("black")
         ship.draw(screen)
         pygame.display.flip()
         dt = (fps.tick(60) / 1000)
-        ship.update(dt)
-        number -= 1
+        
+
         
 
 
