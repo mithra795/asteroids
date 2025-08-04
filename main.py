@@ -33,7 +33,7 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                returnd 
+                return 
             
 
         updatable.update(dt)
@@ -44,7 +44,7 @@ def main():
         for thing in asteroids:
             for shot in shots:
                 if thing.collisions(shot) == True:
-                    thing.kill()
+                    thing.split()
                     shot.kill()
         screen.fill("black")
         for thing in drawable:
