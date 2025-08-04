@@ -26,6 +26,7 @@ def main():
         ship.draw(screen)
         pygame.display.flip()
         dt = (fps.tick(60) / 1000)
+        ship.update(dt)
         number -= 1
         
 
